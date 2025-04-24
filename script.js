@@ -174,11 +174,51 @@ let books = [
     }
 ]
 
+
 function renderBookSelection() {
     let bookSelectionRef = document.getElementById('content');
     bookSelectionRef.innerHTML += getBookSelectionContent();
 }
 
 function getBookSelectionContent() {
-    return``
+    return `<div class="selection_template">
+                <h1>Titel</h1>
+                <div class="book"><img src="./assets/img/to-learn-4759967_1280.png" alt="Buch"></div>
+                <div class="info">
+                    <div class="price">
+                        <h1>Price €</h1>
+                        <div class="like_counter">
+                            <p>counter</p>
+                            <div id='heart' class='like_button' onclick="toggleLikeButton()"></div>
+                        </div>
+                    </div>
+                    <div class="info_text">
+                        <table>
+                            <tr>
+                                <td><b>Author</b></td>
+                                <td>:</td>
+                                <td>fill me</td>
+                            </tr>
+                            <tr>
+                                <td><b>Erscheinungsjahr</b></td>
+                                <td>:</td>
+                                <td>fill me</td>
+                            </tr>
+                            <tr>
+                                <td><b>Genre</b></td>
+                                <td>:</td>
+                                <td>fill me</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>    
+                <div class="comments">
+                    <h3>Kommentare:</h3>
+                    <div class="writen_comments"></div>
+                    <div class="input_and_buttom">
+                        <input type="text" placeholder="Schreibe einen Kommentar...">
+                        <div id="send" class="send_button" onclick=""></div>
+                    </div>
+                </div>
+            </div>`
 }

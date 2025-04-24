@@ -122,8 +122,7 @@ main {
 .input_and_buttom{
     display: flex;
     justify-content: space-between;
-
-    
+    gap: 8px;
 }
 
 footer {

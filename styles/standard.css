@@ -46,7 +46,7 @@ p {
 }
 
 .like_button_pressed {
-    content: url(../assets/img/heart_red.png);
+    content: url(../assets/img/heart-red.png);
     width: 48px;
 }
 
@@ -58,4 +58,14 @@ input{
     background-color: #167091;
     border: 0;
     border-bottom: 2px solid #1C8ADB;
+    width: 100%;
+}
+
+.send_button{
+    content: url(../assets/img/paper-airplane-1513032_1280.png);
+    width: 36px;
+}
+
+.send_button:hover{
+    cursor: pointer;
 }

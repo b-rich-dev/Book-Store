@@ -173,3 +173,12 @@ let books = [
         ]
     }
 ]
+
+function renderBookSelection() {
+    let bookSelectionRef = document.getElementById('content');
+    bookSelectionRef.innerHTML += getBookSelectionContent();
+}
+
+function getBookSelectionContent() {
+    return``
+}

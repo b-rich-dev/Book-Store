@@ -36,38 +36,94 @@ header {
     width: auto;
 }
 
-.main_img {
-    max-width: 1920px;
+main {
     display: flex;
-    align-items: center;
+    flex: 1;
     justify-content: center;
-}
 
-.main_img img {
-    width: 160px;
-    height: 160px;
-    border-radius: 24px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #1f7594eb;
-    object-fit: cover;
-}
-
-.main_img img:hover {
-    cursor: pointer;
-    border-style: ridge;
-    border-color: white;
-    border-width: 3px;
+    background-color: #05161d;
 }
 
 .content {
+    /* padding-top: 48px; */
+}
+
+.selection_template {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    margin-top: 48px;
+
+    background-color: #0d4357;
+    border-radius: 16px;
+}
+
+.selection_template h1 {
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.book {
     display: flex;
     justify-content: center;
-    align-items: normal;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-bottom: 32px;
-    gap: 24px;
+    background-color: #167091;
+
+    border-top: 2px solid #1C8ADB;
+    box-shadow: inset 0 0 60px #0d4357;
+}
+
+.book img {
+    width: 200px;
+    height: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    border-top: 2px solid #1C8ADB;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price h1 {
+    color: red;
+}
+
+.like_counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comments {
+    border-top: 2px solid #1C8ADB;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.writen_comments{
+    height: 120px;
+}
+
+.input_and_buttom{
+    display: flex;
+    justify-content: space-between;
+
+    
 }
 
 footer {
@@ -99,7 +155,7 @@ footer {
 }
 
 .footer_container a:hover {
-    color: #1f7594;
+    color: #05161d;
 }
 
 .footer_container a img {

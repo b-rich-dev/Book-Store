@@ -24,6 +24,38 @@ a:hover {
     text-decoration: none;
 }
 
+table {
+    color: white;
+}
+
+table td b {
+    font-weight: bold;
+}
+
 p {
     color: white;
+}
+
+.like_button {
+    content: url(../assets/img/heart_black.png);
+    width: 48px;
+}
+
+.like_button:hover {
+    cursor: pointer;
+}
+
+.like_button_pressed {
+    content: url(../assets/img/heart_red.png);
+    width: 48px;
+}
+
+.like_button_pressed:hover {
+    cursor: pointer;
+}
+
+input{
+    background-color: #167091;
+    border: 0;
+    border-bottom: 2px solid #1C8ADB;
 }

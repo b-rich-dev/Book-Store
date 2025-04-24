@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Store</title>
+
+    <script src="script.js"></script>
+
+    <link rel="icon" type="img/png" href="./assets/icon/a-book-1157658_1280.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/font.css">
+    <link rel="stylesheet" href="styles/standard.css">
+    <link rel="stylesheet" href="styles/assets.css">
 </head>
-<body>
-    
+
+<body onload="renderBookSelection()">
+        <div class="container">
+            <header>
+                <div class="header_container">
+                    <a href="./index.html">
+                        <img src="./assets/icon/a-book-1157658_1280.png" alt="Book_Logo">
+                    </a>
+                    <h1>Bookstore</h1><h4>-</h4><h4>get your book here</h4>
+                </div>
+            </header>
+            <main>
+                <div class="main_container">
+                    <div id="content" class="content"></div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer_container">
+                    <a href="./impressum.html">
+                        <img src="./assets/icon/a-book-1157658_1280.png" alt="Logo">
+                    </a>
+                    <a href="./impressum.html">Impressum</a>
+                </div>
+            </footer>
+        </div>
 </body>
+
 </html>

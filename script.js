@@ -179,6 +179,9 @@ function init() {
     renderBookSelection();
     renderName();
     renderPrice();
+    renderLikes();
+    renderAuthor();
+    // toggleLikeButtonIfLiked()
 }
 
 
@@ -223,3 +226,54 @@ function renderPrice() {
 function getPriceTemplate(index) {
     return `<h1>${books[index].price.toFixed(2)} €</h1>`;
 }
+
+
+function renderLikes() {
+    for (let indexLikes = 0; indexLikes < books.length; indexLikes++) {
+        let likesId = 'likes' + (indexLikes + 1)
+        let likesRef = document.getElementById(likesId);
+
+        if (likesRef) {
+            likesRef.innerHTML += getLikesTemplate(indexLikes);
+        }
+
+    }
+}
+
+
+function getLikesTemplate(index) {
+    return `<h4>${books[index].likes}</h4>`;
+}
+
+
+function renderAuthor() {
+    for (let indexAuthor = 0; indexAuthor < books.length; indexAuthor++) {
+        let authorId = 'author' + (indexAuthor + 1)
+        let authorRef = document.getElementById(authorId);
+
+        if (authorRef) {
+            authorRef.innerHTML += getAuthorTemplate(indexAuthor);
+        }
+
+    }
+}
+
+
+function getAuthorTemplate(index) {
+    return `${books[index].author}`;
+}
+
+
+// function renderBookDetails() {
+//     for (let i = 0; i < books.length; i++) {
+//         let likesRef = document.getElementById('likes' + (i + 1));
+//         if (likesRef) {
+//             likesRef.innerHTML += getLikesTemplate(i);
+//         }
+
+//         let authorRef = document.getElementById('author' + (i + 1));
+//         if (authorRef) {
+//             authorRef.innerHTML += getAuthorTemplate(i);
+//         }
+//     }
+// }

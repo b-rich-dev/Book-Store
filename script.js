@@ -177,10 +177,7 @@ let books = [
 
 function init() {
     renderBookSelection();
-    renderName();
-    renderPrice();
-    renderLikes();
-    renderAuthor();
+    renderBookDetails()
     // toggleLikeButtonIfLiked()
 }
 
@@ -188,92 +185,54 @@ function init() {
 function renderBookSelection() {
     let bookSelectionRef = document.getElementById('content');
     bookSelectionRef.innerHTML += getBookSelectionContent()
-                                + getBookSelectionContent2();
+        + getBookSelectionContent2();
 }
 
 
-function renderName() {
-    for (let indexName = 0; indexName < books.length; indexName++) {
-        let nameId = 'name' + (indexName + 1)
-        let nameRef = document.getElementById(nameId);
+function renderBookDetails() {
+    for (let i = 0; i < books.length; i++) {
 
+        let nameRef = document.getElementById('name' + (i + 1));
         if (nameRef) {
-            nameRef.innerHTML += getNameTemplate(indexName);
+            nameRef.innerHTML += getNameTemplate(i);
         }
 
-    }
-}
-
-
-function getNameTemplate(index) {
-    return `<h1>${books[index].name}</h1>`;
-}
-
-
-function renderPrice() {
-    for (let indexPrice = 0; indexPrice < books.length; indexPrice++) {
-        let priceId = 'price' + (indexPrice + 1)
-        let priceRef = document.getElementById(priceId);
-
+        let priceRef = document.getElementById('price' + (i + 1));
         if (priceRef) {
-            priceRef.innerHTML += getPriceTemplate(indexPrice);
+            priceRef.innerHTML += getPriceTemplate(i);
         }
 
-    }
-}
-
-
-function getPriceTemplate(index) {
-    return `<h1>${books[index].price.toFixed(2)} €</h1>`;
-}
-
-
-function renderLikes() {
-    for (let indexLikes = 0; indexLikes < books.length; indexLikes++) {
-        let likesId = 'likes' + (indexLikes + 1)
-        let likesRef = document.getElementById(likesId);
-
+        let likesRef = document.getElementById('likes' + (i + 1));
         if (likesRef) {
-            likesRef.innerHTML += getLikesTemplate(indexLikes);
+            likesRef.innerHTML += getLikesTemplate(i);
         }
 
-    }
-}
-
-
-function getLikesTemplate(index) {
-    return `<h4>${books[index].likes}</h4>`;
-}
-
-
-function renderAuthor() {
-    for (let indexAuthor = 0; indexAuthor < books.length; indexAuthor++) {
-        let authorId = 'author' + (indexAuthor + 1)
-        let authorRef = document.getElementById(authorId);
-
+        let authorRef = document.getElementById('author' + (i + 1));
         if (authorRef) {
-            authorRef.innerHTML += getAuthorTemplate(indexAuthor);
+            authorRef.innerHTML += getAuthorTemplate(i);
         }
 
+        let publishedYearRef = document.getElementById('published_year' + (i + 1));
+        if (publishedYearRef) {
+            publishedYearRef.innerHTML += getPublishedYearTemplate(i);
+        }
+
+        let genreRef = document.getElementById('genre' + (i + 1));
+        if (genreRef) {
+            genreRef.innerHTML += getGenreTemplate(i);
+        }
+
+        let commentsRef = document.getElementById('comments' + (i + 1));
+        if (!commentsRef) continue;
+        
+            commentsRef.innerHTML = "";
+        
+        for (let comment of books[i].comments) {
+            commentsRef.innerHTML += `<p><strong>${comment.name}:</strong> ${comment.comment}</p>`;
+        }
+
+        if (books[i].comments.length === 0) {
+            commentsRef.innerHTML = `<p>Schreibe den ersten Kommentar!</p>`;
+        }
     }
 }
-
-
-function getAuthorTemplate(index) {
-    return `${books[index].author}`;
-}
-
-
-// function renderBookDetails() {
-//     for (let i = 0; i < books.length; i++) {
-//         let likesRef = document.getElementById('likes' + (i + 1));
-//         if (likesRef) {
-//             likesRef.innerHTML += getLikesTemplate(i);
-//         }
-
-//         let authorRef = document.getElementById('author' + (i + 1));
-//         if (authorRef) {
-//             authorRef.innerHTML += getAuthorTemplate(i);
-//         }
-//     }
-// }

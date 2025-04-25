@@ -1,3 +1,39 @@
+function getNameTemplate(index) {
+    return `<h1>${books[index].name}</h1>`;
+}
+
+
+function getPriceTemplate(index) {
+    return `<h1>${books[index].price.toFixed(2)} €</h1>`;
+}
+
+
+function getLikesTemplate(index) {
+    return `<h4>${books[index].likes}</h4>`;
+}
+
+
+function getAuthorTemplate(index) {
+    return `${books[index].author}`;
+}
+
+
+function getPublishedYearTemplate(index) {
+    return `${books[index].publishedYear}`;
+}
+
+
+function getGenreTemplate(index) {
+    return `${books[index].genre}`;
+}
+
+
+function getCommentsTemplate(index) {
+    return `${books[index].comments}`;
+}
+
+console.log(Object.entries(books));
+
 function getBookSelectionContent() {
     return `<div class="selection_template">
                 <div id="name1" class="name"></div>
@@ -20,19 +56,19 @@ function getBookSelectionContent() {
                             <tr>
                                 <td><b>Erscheinungsjahr</b></td>
                                 <td>:</td>
-                                <td>fill me</td>
+                                <td id="published_year1"></td>
                             </tr>
                             <tr>
                                 <td><b>Genre</b></td>
                                 <td>:</td>
-                                <td>fill me</td>
+                                <td id="genre1"></td>
                             </tr>
                         </table>
                     </div>
                 </div>    
                 <div class="comments">
                     <h3>Kommentare:</h3>
-                    <div class="writen_comments"></div>
+                    <div id="comments1" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input type="text" placeholder="Schreibe einen Kommentar...">
                         <div id="send" class="send_button" onclick=""></div>
@@ -64,19 +100,19 @@ function getBookSelectionContent2() {
                             <tr>
                                 <td><b>Erscheinungsjahr</b></td>
                                 <td>:</td>
-                                <td>fill me</td>
+                                <td id="published_year2"></td>
                             </tr>
                             <tr>
                                 <td><b>Genre</b></td>
                                 <td>:</td>
-                                <td>fill me</td>
+                                <td id="genre2"></td>
                             </tr>
                         </table>
                     </div>
                 </div>    
                 <div class="comments">
                     <h3>Kommentare:</h3>
-                    <div class="writen_comments"></div>
+                    <div id="comments2" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input type="text" placeholder="Schreibe einen Kommentar...">
                         <div id="send" class="send_button" onclick=""></div>

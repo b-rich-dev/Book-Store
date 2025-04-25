@@ -45,12 +45,14 @@ main {
     background-color: #05161d;
 }
 
-.content {}
+.content {
+    padding: 0 10% 0 10%;
+}
 
 .selection_template {
     display: flex;
     flex-direction: column;
-    width: auto;
+    max-width: 560px;
     margin-top: 48px;
 
     background-color: #0d4357;
@@ -116,11 +118,31 @@ main {
     padding-right: 5%;
 }
 
-.writen_comments{
+.writen_comments {
     height: 120px;
+    overflow-y: auto;
+    scrollbar-color: #167091 #1C8ADB;
+    scrollbar-width: thin;
+    margin: 16px 0 16px 0;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.input_and_buttom{
+.comments_field {
+    display: flex;
+    width: 100%;
+}
+
+.left {
+    flex: 0 0 40%;
+}
+
+.right {
+    flex: 0 0 60%;
+}
+
+.input_and_buttom {
     display: flex;
     justify-content: space-between;
     gap: 8px;

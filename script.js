@@ -185,7 +185,14 @@ function init() {
 function renderBookSelection() {
     let bookSelectionRef = document.getElementById('content');
     bookSelectionRef.innerHTML += getBookSelectionContent()
-        + getBookSelectionContent2();
+        + getBookSelectionContent2()
+        + getBookSelectionContent3()
+        + getBookSelectionContent4()
+        + getBookSelectionContent5()
+        + getBookSelectionContent6()
+        + getBookSelectionContent7()
+        + getBookSelectionContent8()
+        + getBookSelectionContent9();
 }
 
 
@@ -224,15 +231,15 @@ function renderBookDetails() {
 
         let commentsRef = document.getElementById('comments' + (i + 1));
         if (!commentsRef) continue;
-        
-            commentsRef.innerHTML = "";
-        
-        for (let comment of books[i].comments) {
-            commentsRef.innerHTML += `<p><strong>${comment.name}:</strong> ${comment.comment}</p>`;
-        }
+
+        commentsRef.innerHTML = "";
 
         if (books[i].comments.length === 0) {
             commentsRef.innerHTML = `<p>Schreibe den ersten Kommentar!</p>`;
+        } else {
+            for (let comment of books[i].comments) {
+                commentsRef.innerHTML += `<div class="comments_field"><p class="left">${comment.name}:</p><p class="right"> ${comment.comment}</p></div>`;
+            }
         }
     }
 }

@@ -20,10 +20,12 @@ function toggleLikeButtonOnClick(idNumber) {
     if (likesRef) {
         likesRef.textContent = book.likes;
     }
+
+    saveToLocalStorage();
 }
 
 
-function saveData(index) {
+function saveComment(index) {
     let comment_inputRef = document.getElementById('comment_input' + (index + 1));
     let commentValue = comment_inputRef.value.trim();
 
@@ -90,6 +92,6 @@ function getFromLocalStorage() {
 
 function checkEnter(event, index) {
     if (event.key === "Enter") {
-        saveData(index);
+        saveComment(index);
     }
 }

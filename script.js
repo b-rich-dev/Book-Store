@@ -248,3 +248,9 @@ function renderBookDetails() {
         }
     }
 }
+
+
+function renderImpressumContent() {
+    let impressumRef = document.getElementById('impressum')
+    impressumRef.innerHTML += getImpressumContent();
+}

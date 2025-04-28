@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Store</title>
+    <title>Impressum</title>
 
     <script src="script.js"></script>
     <script src="./scripts/templates.js"></script>
-    <script src="./scripts/book_selections_templates.js"></script>
 
     <link rel="icon" type="img/png" href="./assets/icon/a-book-1157658_1280.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/font.css">
     <link rel="stylesheet" href="styles/standard.css">
     <link rel="stylesheet" href="styles/assets.css">
+    <link rel="stylesheet" href="styles/impressum.css">
 </head>
-
-<body onload="init()">
+<body onload="renderImpressumContent()">
     <div class="container">
         <header>
             <div class="header_container">
@@ -29,12 +27,7 @@
                 <h4>get your book here</h4>
             </div>
         </header>
-        <main>
-            <div id="toast">Schreibe bitte zuerst ein Kommentar!</div>
-            <div id="content" class="content">
-  
-            </div>
-        </main>
+        <main id="impressum"></main>
         <footer>
             <div class="footer_container">
                 <a href="./impressum.html">
@@ -45,7 +38,4 @@
         </footer>
     </div>
 </body>
-
-<script src="./scripts/buttons.js"></script>
-
 </html>

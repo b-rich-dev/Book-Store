@@ -176,6 +176,7 @@ let books = [
 
 
 function init() {
+    getFromLocalStorage();
     renderBookSelection();
     renderBookDetails()
     // toggleLikeButtonIfLiked()

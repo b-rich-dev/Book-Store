@@ -59,6 +59,7 @@ input{
     border: 0;
     border-bottom: 2px solid #1C8ADB;
     width: 100%;
+    color: white;
 }
 
 .send_button{

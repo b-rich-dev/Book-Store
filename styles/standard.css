@@ -6,6 +6,7 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
+    color: white;
 }
 
 h1,
@@ -17,23 +18,18 @@ h6 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    color: white;
 }
 
 a:hover {
     text-decoration: none;
 }
 
-table {
-    color: white;
-}
-
 table td b {
     font-weight: bold;
 }
 
-p {
-    color: white;
+.like {
+    font-weight: bold;
 }
 
 .like_button {
@@ -46,7 +42,7 @@ p {
 }
 
 .like_button_pressed {
-    content: url(../assets/img/heart-red.png);
+    content: url(../assets/img/heart_red.png);
     width: 48px;
 }
 
@@ -54,7 +50,7 @@ p {
     cursor: pointer;
 }
 
-input{
+input {
     background-color: #167091;
     border: 0;
     border-bottom: 2px solid #1C8ADB;
@@ -62,11 +58,11 @@ input{
     color: white;
 }
 
-.send_button{
+.send_button {
     content: url(../assets/img/paper-airplane-1513032_1280.png);
     width: 36px;
 }
 
-.send_button:hover{
+.send_button:hover {
     cursor: pointer;
 }

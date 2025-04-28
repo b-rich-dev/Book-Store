@@ -41,8 +41,8 @@ function getBookSelectionContent() {
                     <div class="price">
                         <div id="price1"></div>
                         <div class="like_counter">
-                            <div id="likes1"></div>
-                            <div id="heart1" class="like_button" onclick="toggleLikeButton(1)"></div>
+                            <div id="likes1" class="like"></div>
+                            <div id="heart1" class="like_button" onclick="toggleLikeButtonOnClick(1)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -85,8 +85,8 @@ function getBookSelectionContent2() {
                     <div class="price">
                         <div id="price2"></div>
                         <div class="like_counter">
-                            <div id="likes2"></div>
-                            <div id='heart2' class='like_button' onclick="toggleLikeButton(2)"></div>
+                            <div id="likes2" class="like"></div>
+                            <div id='heart2' class='like_button' onclick="toggleLikeButtonOnClick(2)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -129,8 +129,8 @@ function getBookSelectionContent3() {
                     <div class="price">
                         <div id="price3"></div>
                         <div class="like_counter">
-                            <div id="likes3"></div>
-                            <div id="heart3" class="like_button" onclick="toggleLikeButton(1)"></div>
+                            <div id="likes3" class="like"></div>
+                            <div id="heart3" class="like_button" onclick="toggleLikeButtonOnClick(3)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -173,8 +173,8 @@ function getBookSelectionContent4() {
                     <div class="price">
                         <div id="price4"></div>
                         <div class="like_counter">
-                            <div id="likes4"></div>
-                            <div id='heart4' class='like_button' onclick="toggleLikeButton(2)"></div>
+                            <div id="likes4" class="like"></div>
+                            <div id='heart4' class='like_button' onclick="toggleLikeButtonOnClick(4)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -217,8 +217,8 @@ function getBookSelectionContent5() {
                     <div class="price">
                         <div id="price5"></div>
                         <div class="like_counter">
-                            <div id="likes5"></div>
-                            <div id="heart5" class="like_button" onclick="toggleLikeButton(1)"></div>
+                            <div id="likes5" class="like"></div>
+                            <div id="heart5" class="like_button" onclick="toggleLikeButtonOnClick(5)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -261,8 +261,8 @@ function getBookSelectionContent6() {
                     <div class="price">
                         <div id="price6"></div>
                         <div class="like_counter">
-                            <div id="likes6"></div>
-                            <div id="heart6" class="like_button" onclick="toggleLikeButton(2)"></div>
+                            <div id="likes6" class="like"></div>
+                            <div id="heart6" class="like_button" onclick="toggleLikeButtonOnClick(6)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -305,8 +305,8 @@ function getBookSelectionContent7() {
                     <div class="price">
                         <div id="price7"></div>
                         <div class="like_counter">
-                            <div id="likes7"></div>
-                            <div id="heart7" class="like_button" onclick="toggleLikeButton(1)"></div>
+                            <div id="likes7" class="like"></div>
+                            <div id="heart7" class="like_button" onclick="toggleLikeButtonOnClick(7)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -349,8 +349,8 @@ function getBookSelectionContent8() {
                     <div class="price">
                         <div id="price8"></div>
                         <div class="like_counter">
-                            <div id="likes8"></div>
-                            <div id='heart8' class='like_button' onclick="toggleLikeButton(2)"></div>
+                            <div id="likes8" class="like"></div>
+                            <div id="heart8" class="like_button" onclick="toggleLikeButtonOnClick(8)"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -393,8 +393,8 @@ function getBookSelectionContent9() {
                     <div class="price">
                         <div id="price9"></div>
                         <div class="like_counter">
-                            <div id="likes9"></div>
-                            <div id="heart9" class="like_button" onclick="toggleLikeButton(2)"></div>
+                            <div id="likes9" class="like"></div>
+                            <div id="heart9" class="like_button" onclick="toggleLikeButtonOnClick(9)"></div>
                         </div>
                     </div>
                     <div class="info_text">

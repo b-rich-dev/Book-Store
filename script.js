@@ -179,7 +179,6 @@ function init() {
     getFromLocalStorage();
     renderBookSelection();
     renderBookDetails()
-    // toggleLikeButtonIfLiked()
 }
 
 
@@ -213,6 +212,11 @@ function renderBookDetails() {
         let likesRef = document.getElementById('likes' + (i + 1));
         if (likesRef) {
             likesRef.innerHTML += getLikesTemplate(i);
+        }
+
+        let likedRef = document.getElementById('heart' + (i + 1));
+        if (likedRef && books[i].liked === true) {
+            toggleLikeButton(i + 1);
         }
 
         let authorRef = document.getElementById('author' + (i + 1));

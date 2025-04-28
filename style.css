@@ -120,13 +120,37 @@ main {
 
 .writen_comments {
     height: 120px;
+
     overflow-y: auto;
-    scrollbar-color: #167091 #1C8ADB;
-    scrollbar-width: thin;
+    --sb-track-color: #05161d;
+    --sb-thumb-color: #71bedb;
+    --sb-size: 4px;
+
     margin: 16px 0 16px 0;
 
     display: flex;
     flex-direction: column;
+}
+
+.writen_comments::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+.writen_comments::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 2px;
+}
+
+.writen_comments::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 2px;
+
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .writen_comments {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
 }
 
 .comments_field {
@@ -136,6 +160,7 @@ main {
 
 .left {
     flex: 0 0 40%;
+    font-weight: bold;
 }
 
 .right {

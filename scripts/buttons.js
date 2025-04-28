@@ -37,7 +37,7 @@ function saveData(index) {
         comment: commentValue
     };
 
-    books[index].comments.push(newComment);
+    books[index].comments.unshift(newComment);
 
     saveToLocalStorage();
     renderCommentsForBook(index);

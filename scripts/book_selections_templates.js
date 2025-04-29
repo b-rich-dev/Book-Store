@@ -35,7 +35,7 @@ function getBookSelectionContent() {
                     <div id="comments1" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input1" onkeydown="checkEnter(event, 0)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(0)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(0)"></div>
                     </div>
                 </div>
             </div>`;
@@ -79,7 +79,7 @@ function getBookSelectionContent2() {
                     <div id="comments2" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input2" onkeydown="checkEnter(event, 1) type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(1)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(1)"></div>
                     </div>
                 </div>
             </div>`;
@@ -123,7 +123,7 @@ function getBookSelectionContent3() {
                     <div id="comments3" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input3" onkeydown="checkEnter(event, 2)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(2)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(2)"></div>
                     </div>
                 </div>
             </div>`;
@@ -167,7 +167,7 @@ function getBookSelectionContent4() {
                     <div id="comments4" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input4" onkeydown="checkEnter(event, 3)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(3)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(3)"></div>
                     </div>
                 </div>
             </div>`;
@@ -211,7 +211,7 @@ function getBookSelectionContent5() {
                     <div id="comments5" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input5" onkeydown="checkEnter(event, 4)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(4)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(4)"></div>
                     </div>
                 </div>
             </div>`;
@@ -255,7 +255,7 @@ function getBookSelectionContent6() {
                     <div id="comments6" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input6" onkeydown="checkEnter(event, 5)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(5)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(5)"></div>
                     </div>
                 </div>
             </div>`;
@@ -299,7 +299,7 @@ function getBookSelectionContent7() {
                     <div id="comments7" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input7" onkeydown="checkEnter(event, 6)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(6)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(6)"></div>
                     </div>
                 </div>
             </div>`;
@@ -343,7 +343,7 @@ function getBookSelectionContent8() {
                     <div id="comments8" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input8" onkeydown="checkEnter(event, 7)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(7)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(7)"></div>
                     </div>
                 </div>
             </div>`;
@@ -387,7 +387,7 @@ function getBookSelectionContent9() {
                     <div id="comments9" class="writen_comments"></div>
                     <div class="input_and_buttom">
                         <input id="comment_input9" onkeydown="checkEnter(event, 8)" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveData(8)"></div>
+                        <div id="send" class="send_button" onclick="saveComment(8)"></div>
                     </div>
                 </div>
             </div>`;

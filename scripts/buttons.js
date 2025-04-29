@@ -1,6 +1,12 @@
-function toggleLikeButton(idNumber) {
-    document.getElementById('heart' + idNumber)?.classList.toggle('like_button_pressed');
+// function toggleLikeButton(idNumber) {
+//     document.getElementById('heart' + idNumber)?.classList.toggle('like_button_pressed');
+// }
+
+
+function toggleLikeButton() {
+    document.getElementById('heart')?.classList.toggle('like_button_pressed');
 }
+
 
 function toggleLikeButtonOnClick(idNumber) {
     let book = books[idNumber - 1];

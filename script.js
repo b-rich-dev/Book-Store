@@ -22,7 +22,7 @@ let books = [
             },
             {
                 "name": "SciFiGuru",
-                "comment": "Ein cleverer Science-Fiction-Roman mit interessanten Zeitreise-Konzepten und Charakteren."
+                "comment": "Ein cleverer Science-Fiction-Roman mit interes nten Zeitreise-Konzepten und Charakteren."
             },
             {
                 "name": "NovelLover",
@@ -177,77 +177,115 @@ let books = [
 
 function init() {
     getFromLocalStorage();
-    renderBookSelection();
-    renderBookDetails()
+    renderBooksTemplate();
+    // renderBooksDetails()
 }
 
+function renderBooksTemplate() {
+    let booksRef = document.getElementById('content')
+    booksRef.innerHTML = "";
 
-function renderBookSelection() {
-    let bookSelectionRef = document.getElementById('content');
-    bookSelectionRef.innerHTML += getBookSelectionContent()
-        + getBookSelectionContent2()
-        + getBookSelectionContent3()
-        + getBookSelectionContent4()
-        + getBookSelectionContent5()
-        + getBookSelectionContent6()
-        + getBookSelectionContent7()
-        + getBookSelectionContent8()
-        + getBookSelectionContent9();
-}
+    for (let indexArr = 0; indexArr < books.length; indexArr++) {
+        booksRef.innerHTML += booksTemplate(indexArr);
+    }
+
+    // for (let i = 0; i < books.length; i++) {
+    //     if (books[i].liked === true) {
+    //         toggleLikeButton(i);
+    //     }
+    // }
+    for (let indexArr = 0; indexArr < books.length; indexArr++) {
 
 
-function renderBookDetails() {
-    for (let i = 0; i < books.length; i++) {
-
-        let nameRef = document.getElementById('name' + (i + 1));
-        if (nameRef) {
-            nameRef.innerHTML += getNameTemplate(i);
-        }
-
-        let priceRef = document.getElementById('price' + (i + 1));
-        if (priceRef) {
-            priceRef.innerHTML += getPriceTemplate(i);
-        }
-
-        let likesRef = document.getElementById('likes' + (i + 1));
-        if (likesRef) {
-            likesRef.innerHTML += getLikesTemplate(i);
-        }
-
-        let likedRef = document.getElementById('heart' + (i + 1));
-        if (likedRef && books[i].liked === true) {
+        let likedRef = document.getElementById('heart' + (indexArr + 1));
+        if (likedRef && books[indexArr].liked === true) {
             toggleLikeButton(i + 1);
         }
 
-        let authorRef = document.getElementById('author' + (i + 1));
-        if (authorRef) {
-            authorRef.innerHTML += getAuthorTemplate(i);
-        }
-
-        let publishedYearRef = document.getElementById('published_year' + (i + 1));
-        if (publishedYearRef) {
-            publishedYearRef.innerHTML += getPublishedYearTemplate(i);
-        }
-
-        let genreRef = document.getElementById('genre' + (i + 1));
-        if (genreRef) {
-            genreRef.innerHTML += getGenreTemplate(i);
-        }
-
-        let commentsRef = document.getElementById('comments' + (i + 1));
-        if (!commentsRef) continue;
-
-        commentsRef.innerHTML = "";
-
-        if (books[i].comments.length === 0) {
-            commentsRef.innerHTML = `<p>Schreibe den ersten Kommentar!</p>`;
-        } else {
-            for (let comment of books[i].comments) {
-                commentsRef.innerHTML += `<div class="comments_field"><p class="left">${comment.name}:</p><p class="right"> ${comment.comment}</p></div>`;
-            }
-        }
     }
+
 }
+
+
+
+
+// let likedRef = document.getElementById('heart' + (i + 1));
+// if (likedRef && books[i].liked === true) {
+//     toggleLikeButton(i + 1);
+// }
+
+// function renderBooksDetails() {
+//     let contentRef = document.getElementById('content')
+//     for (let i = 0; i < books.length; i++) {
+//         contentRef.innerHTML += getBooksDetails(i);
+//     }
+// }
+
+
+// function getBooksDetails(i) {
+//     getNameTemplate(i);
+//     getPriceTemplate(i);
+//     getLikesTemplate(i);
+//     getAuthorTemplate(i);
+//     getPublishedYearTemplate(i);
+//     getGenreTemplate(i);
+// }
+
+
+// function renderBookDetails666() {
+//     for (let i = 0; i < books.length; i++) {
+
+//         let nameRef = document.getElementById('name' + (i + 1));
+//         if (nameRef) {
+//             nameRef.innerHTML += getNameTemplate(i);
+//         }
+
+//         let priceRef = document.getElementById('price' + (i + 1));
+//         if (priceRef) {
+//             priceRef.innerHTML += getPriceTemplate(i);
+//         }
+
+//         let likesRef = document.getElementById('likes' + (i + 1));
+//         if (likesRef) {
+//             likesRef.innerHTML += getLikesTemplate(i);
+//         }
+
+
+//         let likedRef = document.getElementById('heart' + (i + 1));
+//         if (likedRef && books[i].liked === true) {
+//             toggleLikeButton(i + 1);
+//         }
+
+
+//         let authorRef = document.getElementById('author' + (i + 1));
+//         if (authorRef) {
+//             authorRef.innerHTML += getAuthorTemplate(i);
+//         }
+
+//         let publishedYearRef = document.getElementById('published_year' + (i + 1));
+//         if (publishedYearRef) {
+//             publishedYearRef.innerHTML += getPublishedYearTemplate(i);
+//         }
+
+//         let genreRef = document.getElementById('genre' + (i + 1));
+//         if (genreRef) {
+//             genreRef.innerHTML += getGenreTemplate(i);
+//         }
+
+//         let commentsRef = document.getElementById('comments' + (i + 1));
+//         if (!commentsRef) continue;
+
+//         commentsRef.innerHTML = "";
+
+//         if (books[i].comments.length === 0) {
+//             commentsRef.innerHTML = `<p>Schreibe den ersten Kommentar!</p>`;
+//         } else {
+//             for (let comment of books[i].comments) {
+//                 commentsRef.innerHTML += `<div class="comments_field"><p class="left">${comment.name}:</p><p class="right"> ${comment.comment}</p></div>`;
+//             }
+//         }
+//     }
+// }
 
 
 function renderImpressumContent() {

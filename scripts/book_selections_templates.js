@@ -78,7 +78,7 @@ function getBookSelectionContent2() {
                     <h3>Kommentare:</h3>
                     <div id="comments2" class="writen_comments"></div>
                     <div class="input_and_buttom">
-                        <input id="comment_input2" onkeydown="checkEnter(event, 1) type="text" placeholder="Schreibe einen Kommentar...">
+                        <input id="comment_input2" onkeydown="checkEnter(event, 1)" type="text" placeholder="Schreibe einen Kommentar...">
                         <div id="send" class="send_button" onclick="saveComment(1)"></div>
                     </div>
                 </div>

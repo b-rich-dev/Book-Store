@@ -1,53 +1,13 @@
-function getNameTemplate(index) {
-    return `<h1>${books[index].name}</h1>`;
-}
-//Ab hier
-
-function getPriceTemplate(index) {
-    return `<h1>${books[index].price.toFixed(2)} €</h1>`;
-}
-
-
-function getLikesTemplate(index) {
-    return `<h4>${books[index].likes}</h4>`;
-}
-
-
-function getLikedTemplate(index) {
-    return `<h4>${books[index].liked}</h4>`;
-}
-
-
-function getAuthorTemplate(index) {
-    return `${books[index].author}`;
-}
-
-
-function getPublishedYearTemplate(index) {
-    return `${books[index].publishedYear}`;
-}
-
-
-function getGenreTemplate(index) {
-    return `${books[index].genre}`;
-}
-
-
-function getCommentsTemplate(index) {
-    return `${books[index].comments}`;
-}
-
-
-function booksTemplate(index) {
+function getBooksTemplate(index) {
     return `<div class="selection_template">
-                <div id="name1" class="name"><h1>${books[index].name}</h1></div>
+                <div id="name" class="name"><h1>${books[index].name}</h1></div>
                 <div class="book"><img src="./assets/img/to-learn-4759967_1280.png" alt="Buch"></div>
                 <div class="info">
                     <div class="price">
-                        <div id="price1"><h1>${books[index].price.toFixed(2)} €</h1></div>
+                        <div id="price"><h1>${books[index].price.toFixed(2)} €</h1></div>
                         <div class="like_counter">
-                            <div id="likes1" class="like"><h4>${books[index].likes}</h4></div>
-                            <div id="heart1" class="like_button" onclick="toggleLikeButtonOnClick(1)"></div>
+                            <div id="likes" class="like"><h4>${books[index].likes}</h4></div>
+                            <div id="heart${index}" class="like_button" onclick="toggleLikeButtonOnClick(${index})"></div>
                         </div>
                     </div>
                     <div class="info_text">
@@ -55,30 +15,43 @@ function booksTemplate(index) {
                             <tr>
                                 <td><b>Author</b></td>
                                 <td>:</td>
-                                <td id="author1">${books[index].author}</td>
+                                <td id="author">${books[index].author}</td>
                             </tr>
                             <tr>
                                 <td><b>Erscheinungsjahr</b></td>
                                 <td>:</td>
-                                <td id="published_year1">${books[index].publishedYear}</td>
+                                <td id="published_year">${books[index].publishedYear}</td>
                             </tr>
                             <tr>
                                 <td><b>Genre</b></td>
                                 <td>:</td>
-                                <td id="genre1">${books[index].genre}</td>
+                                <td id="genre">${books[index].genre}</td>
                             </tr>
                         </table>
                     </div>
                 </div>    
                 <div class="comments">
                     <h3>Kommentare:</h3>
-                    <div id="comments1" class="writen_comments">${books[index].comments}</div>
+                    <div id="comments" class="writen_comments">${renderComments(index)}</div>
                     <div class="input_and_buttom">
-                        <input id="comment_input1" onkeydown="checkEnter(event, 0)" type="text" placeholder="Schreibe einen Kommentar...">
+                        <input id="comment_input" onkeydown="checkEnter(event, 0)" type="text" placeholder="Schreibe einen Kommentar...">
                         <div id="send" class="send_button" onclick="saveComment(0)"></div>
                     </div>
                 </div>
             </div>`;
+}
+
+
+function getBeFirstComment() {
+    return `<p>Schreibe den ersten Kommentar!</p>`;
+}
+
+
+function getComments(commentObj) {
+    return `    <div class="comments_field">
+                    <p class="left">${commentObj.name}:</p>
+                    <p class="right">${commentObj.comment}</p>
+                </div>`;
 }
 
 

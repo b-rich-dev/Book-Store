@@ -1,57 +1,32 @@
-// function toggleLikeButton(idNumber) {
-//     document.getElementById('heart' + idNumber)?.classList.toggle('like_button_pressed');
-// }
-
-
-function toggleLikeButton() {
-    document.getElementById('heart')?.classList.toggle('like_button_pressed');
+function toggleLikeButton(index) {
+    document.getElementById(`heart${index}`)?.classList.toggle('like_button_pressed');
 }
 
 
-function toggleLikeButtonOnClick(idNumber) {
-    let book = books[idNumber - 1];
-    document.getElementById('heart' + idNumber)?.classList.toggle('like_button_pressed');
+function toggleLikeButtonOnClick(index) {
+    let book = books[index];
+    document.getElementById('heart' + index)?.classList.toggle('like_button_pressed');
 
     if (!book.liked) {
         book.likes++;
         book.liked = true;
     }
-
     else {
         book.likes--;
         book.liked = false;
     }
 
-    const likesRef = document.getElementById('likes' + idNumber);
+    const likesRef = document.getElementById('likes' + index);
     if (likesRef) {
         likesRef.textContent = book.likes;
     }
 
+    renderBooksTemplate()
     saveToLocalStorage();
 }
 
 
-function saveComment(index) {
-    let comment_inputRef = document.getElementById('comment_input' + (index + 1));
-    let commentValue = comment_inputRef.value.trim();
 
-    if (commentValue === "") {
-        myToast()
-        return;
-    }
-
-    const newComment = {
-        name: "Gast",
-        comment: commentValue
-    };
-
-    books[index].comments.unshift(newComment);
-
-    saveToLocalStorage();
-    renderCommentsForBook(index);
-
-    comment_inputRef.value = "";
-}
 
 
 function renderCommentsForBook(index) {
@@ -73,31 +48,3 @@ function renderCommentsForBook(index) {
 }
 
 
-function myToast() {
-    let toast = document.getElementById("toast");
-
-    toast.className = "show";
-
-    setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
-}
-
-
-function saveToLocalStorage() {
-    localStorage.setItem("books", JSON.stringify(books));
-}
-
-
-function getFromLocalStorage() {
-    let storedBooks = JSON.parse(localStorage.getItem("books"));
-
-    if (storedBooks) {
-        books = storedBooks;
-    }
-}
-
-
-function checkEnter(event, index) {
-    if (event.key === "Enter") {
-        saveComment(index);
-    }
-}

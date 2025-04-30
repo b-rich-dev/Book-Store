@@ -1,294 +1,97 @@
-let books = [
-    {
-        "name": "Die Geheimnisse des Ozeans",
-        "author": "Clara Meer",
-        "likes": 1250,
-        "liked": true,
-        "price": 19.99,
-        "publishedYear": 2018,
-        "genre": "Fantasy",
-        "comments": [
-            {
-                "name": "Leser123",
-                "comment": "Ein faszinierendes Abenteuerbuch, das mich von der ersten Seite an gefesselt hat."
-            },
-            {
-                "name": "Bookworm84",
-                "comment": "Eine romantische Geschichte, die mein Herz berührt und mich zum Nachdenken gebracht hat."
-            },
-            {
-                "name": "FantasyFanatic",
-                "comment": "Eine spannende Fantasiewelt, die ich nur schwer aus der Hand legen konnte."
-            },
-            {
-                "name": "SciFiGuru",
-                "comment": "Ein cleverer Science-Fiction-Roman mit interes nten Zeitreise-Konzepten und Charakteren."
-            },
-            {
-                "name": "NovelLover",
-                "comment": "Ein Buch, das voller magischer Überraschungen steckt und mich begeistert hat."
-            }
-        ]
-    },
-    {
-        "name": "Der vergessene Pfad",
-        "author": "Maximilian Schwarz",
-        "likes": 980,
-        "liked": false,
-        "price": 14.50,
-        "publishedYear": 2021,
-        "genre": "Fantasy",
-        "comments": []
-    },
-    {
-        "name": "Die Farben des Himmels",
-        "author": "Laura Blau",
-        "likes": 1520,
-        "liked": true,
-        "price": 22.95,
-        "publishedYear": 2019,
-        "genre": "Romantik",
-        "comments": [
-            {
-                "name": "LeserPeter",
-                "comment": "Die Handlung war fesselnd und die Charaktere unglaublich lebendig dargestellt."
-            },
-            {
-                "name": "BookLover21",
-                "comment": "Ein romantisches Meisterwerk, das mich tief berührt und bewegt hat."
-            },
-            {
-                "name": "FantasyNerd",
-                "comment": "Fantastische Welten und epische Abenteuer - genau mein Geschmack!"
-            },
-            {
-                "name": "SciFiEnthusiast",
-                "comment": "Die Zeitreise-Elemente waren genial und haben die Story spannend gemacht."
-            },
-            {
-                "name": "ReadingAddict",
-                "comment": "Ein unvergessliches Buch, das mich auf eine magische Reise mitgenommen hat."
-            }
-        ]
-    },
-    {
-        "name": "Das Rätsel der Zeit",
-        "author": "Alexander Weiss",
-        "likes": 750,
-        "liked": false,
-        "price": 18.00,
-        "publishedYear": 2020,
-        "genre": "Science-Fiction",
-        "comments": [
-            {
-                "name": "BuchKenner",
-                "comment": "Ein spannendes Abenteuer, das mich von Anfang an mitgerissen hat."
-            },
-            {
-                "name": "LeseWurm",
-                "comment": "Die Liebesgeschichte war herzergreifend und wunderschön geschrieben."
-            }
-        ]
-    },
-    {
-        "name": "Der letzte Wächter",
-        "author": "Sabine Grün",
-        "likes": 1300,
-        "liked": true,
-        "price": 16.75,
-        "publishedYear": 2017,
-        "genre": "Fantasy",
-        "comments": []
-    },
-    {
-        "name": "Im Schatten des Mondes",
-        "author": "Philipp Silber",
-        "likes": 890,
-        "liked": false,
-        "price": 12.30,
-        "publishedYear": 2022,
-        "genre": "Science-Fiction",
-        "comments": [
-            {
-                "name": "BücherLiebhaber",
-                "comment": "Eine magische Reise durch eine faszinierende Fantasiewelt, absolut fesselnd."
-            },
-            {
-                "name": "Leseratte",
-                "comment": "Ein packender Science-Fiction-Roman, der mich zum Nachdenken gebracht hat."
-            }
-        ]
-    },
-    {
-        "name": "Jenseits der Sterne",
-        "author": "Oliver Schwarz",
-        "likes": 1450,
-        "liked": true,
-        "price": 21.00,
-        "publishedYear": 2015,
-        "genre": "Science-Fiction",
-        "comments": [
-            {
-                "name": "Leser123",
-                "comment": "Ein fesselndes Abenteuer, das mich von Anfang bis Ende mitgerissen hat."
-            }
-        ]
-    },
-    {
-        "name": "Das verborgene Königreich",
-        "author": "Elena Gold",
-        "likes": 920,
-        "liked": false,
-        "price": 17.50,
-        "publishedYear": 2020,
-        "genre": "Fantasy",
-        "comments": [
-            {
-                "name": "Bookworm92",
-                "comment": "Ein faszinierendes Buch, das mich von der ersten Seite an gefesselt hat."
-            }
-        ]
-    },
-    {
-        "name": "Liebe in Zeiten des Krieges",
-        "author": "Emilia Rot",
-        "likes": 1800,
-        "liked": true,
-        "price": 19.99,
-        "publishedYear": 2016,
-        "genre": "Romantik",
-        "comments": [
-            {
-                "name": "Bibliophile23",
-                "comment": "Die Fantasiewelt war so lebendig, ich konnte das Buch kaum aus der Hand legen."
-            },
-            {
-                "name": "StorySeeker",
-                "comment": "Eine unglaublich berührende Liebesgeschichte, die mich tief bewegt hat."
-            },
-            {
-                "name": "SciFiExplorer",
-                "comment": "Spannende Zukunftsvisionen und interessante Charaktere machten diesen Roman einzigartig."
-            }
-        ]
-    }
-]
-
-
 function init() {
     getFromLocalStorage();
     renderBooksTemplate();
-    // renderBooksDetails()
 }
 
 function renderBooksTemplate() {
-    let booksRef = document.getElementById('content')
+    let booksRef = document.getElementById('content');
     booksRef.innerHTML = "";
 
     for (let indexArr = 0; indexArr < books.length; indexArr++) {
-        booksRef.innerHTML += booksTemplate(indexArr);
+        booksRef.innerHTML += getBooksTemplate(indexArr);
     }
 
-    // for (let i = 0; i < books.length; i++) {
-    //     if (books[i].liked === true) {
-    //         toggleLikeButton(i);
-    //     }
-    // }
-    for (let indexArr = 0; indexArr < books.length; indexArr++) {
-
-
-        let likedRef = document.getElementById('heart' + (indexArr + 1));
-        if (likedRef && books[indexArr].liked === true) {
-            toggleLikeButton(i + 1);
-        }
-
-    }
-
+    renderRedHeartIfLiked();
 }
 
 
+function renderRedHeartIfLiked() {
+    for (let indexArr = 0; indexArr < books.length; indexArr++) {
+        if (books[indexArr].liked === true) {
+            toggleLikeButton(indexArr);
+        }
+    }
+}
 
 
-// let likedRef = document.getElementById('heart' + (i + 1));
-// if (likedRef && books[i].liked === true) {
-//     toggleLikeButton(i + 1);
-// }
+function renderComments(index) {
+    let comments = books[index].comments;
+    if (!comments || comments.length === 0) {
+        return getBeFirstComment();
+    }
 
-// function renderBooksDetails() {
-//     let contentRef = document.getElementById('content')
-//     for (let i = 0; i < books.length; i++) {
-//         contentRef.innerHTML += getBooksDetails(i);
-//     }
-// }
-
-
-// function getBooksDetails(i) {
-//     getNameTemplate(i);
-//     getPriceTemplate(i);
-//     getLikesTemplate(i);
-//     getAuthorTemplate(i);
-//     getPublishedYearTemplate(i);
-//     getGenreTemplate(i);
-// }
-
-
-// function renderBookDetails666() {
-//     for (let i = 0; i < books.length; i++) {
-
-//         let nameRef = document.getElementById('name' + (i + 1));
-//         if (nameRef) {
-//             nameRef.innerHTML += getNameTemplate(i);
-//         }
-
-//         let priceRef = document.getElementById('price' + (i + 1));
-//         if (priceRef) {
-//             priceRef.innerHTML += getPriceTemplate(i);
-//         }
-
-//         let likesRef = document.getElementById('likes' + (i + 1));
-//         if (likesRef) {
-//             likesRef.innerHTML += getLikesTemplate(i);
-//         }
-
-
-//         let likedRef = document.getElementById('heart' + (i + 1));
-//         if (likedRef && books[i].liked === true) {
-//             toggleLikeButton(i + 1);
-//         }
-
-
-//         let authorRef = document.getElementById('author' + (i + 1));
-//         if (authorRef) {
-//             authorRef.innerHTML += getAuthorTemplate(i);
-//         }
-
-//         let publishedYearRef = document.getElementById('published_year' + (i + 1));
-//         if (publishedYearRef) {
-//             publishedYearRef.innerHTML += getPublishedYearTemplate(i);
-//         }
-
-//         let genreRef = document.getElementById('genre' + (i + 1));
-//         if (genreRef) {
-//             genreRef.innerHTML += getGenreTemplate(i);
-//         }
-
-//         let commentsRef = document.getElementById('comments' + (i + 1));
-//         if (!commentsRef) continue;
-
-//         commentsRef.innerHTML = "";
-
-//         if (books[i].comments.length === 0) {
-//             commentsRef.innerHTML = `<p>Schreibe den ersten Kommentar!</p>`;
-//         } else {
-//             for (let comment of books[i].comments) {
-//                 commentsRef.innerHTML += `<div class="comments_field"><p class="left">${comment.name}:</p><p class="right"> ${comment.comment}</p></div>`;
-//             }
-//         }
-//     }
-// }
+    let commentsHTML = "";
+    for (let commentObj of comments) {
+        commentsHTML += getComments(commentObj)
+    }
+    return commentsHTML;
+}
 
 
 function renderImpressumContent() {
     let impressumRef = document.getElementById('impressum')
     impressumRef.innerHTML += getImpressumContent();
+}
+
+
+function myToast() {
+    let toast = document.getElementById("toast");
+
+    toast.className = "show";
+
+    setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+}
+
+
+function saveToLocalStorage() {
+    localStorage.setItem("books", JSON.stringify(books));
+}
+
+
+function getFromLocalStorage() {
+    let storedBooks = JSON.parse(localStorage.getItem("books"));
+
+    if (storedBooks) {
+        books = storedBooks;
+    }
+}
+
+
+function checkEnter(event, index) {
+    if (event.key === "Enter") {
+        saveComment(index);
+    }
+}
+
+
+function saveComment(index) {
+    let comment_inputRef = document.getElementById('comment_input' + (index));
+    let commentValue = comment_inputRef.value.trim();
+
+    if (commentValue === "") {
+        myToast()
+        return;
+    }
+
+    const newComment = {
+        name: "Gast",
+        comment: commentValue
+    };
+
+    books[index].comments.unshift(newComment);
+
+    saveToLocalStorage();
+    renderCommentsForBook(index);
+
+    comment_inputRef.value = "";
 }

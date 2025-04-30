@@ -25,6 +25,7 @@ function renderRedHeartIfLiked() {
 
 
 function renderComments(index) {
+
     let comments = books[index].comments;
     if (!comments || comments.length === 0) {
         return getBeFirstComment();
@@ -69,14 +70,14 @@ function getFromLocalStorage() {
 
 function checkEnter(event, index) {
     if (event.key === "Enter") {
-        saveComment(index);
+        saveAndShowNewComment(index);
     }
 }
 
 
-function saveComment(index) {
-    let comment_inputRef = document.getElementById('comment_input' + (index));
-    let commentValue = comment_inputRef.value.trim();
+function saveAndShowNewComment(index) {
+    let commentInputRef = document.getElementById('comment_input' + (index));
+    let commentValue = commentInputRef.value.trim();
 
     if (commentValue === "") {
         myToast()
@@ -91,7 +92,10 @@ function saveComment(index) {
     books[index].comments.unshift(newComment);
 
     saveToLocalStorage();
-    renderCommentsForBook(index);
+    // renderCommentsAfterSave(index);
+    renderComments(index)
+    getFromLocalStorage();
+    renderBooksTemplate();
 
-    comment_inputRef.value = "";
+    commentInputRef.value = "";
 }

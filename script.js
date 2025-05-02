@@ -70,12 +70,12 @@ function getFromLocalStorage() {
 
 function checkEnter(event, index) {
     if (event.key === "Enter") {
-        saveAndShowNewComment(index);
+        addNewComment(index);
     }
 }
 
 
-function saveAndShowNewComment(index) {
+function addNewComment(index) {
     let commentInputRef = document.getElementById('comment_input' + (index));
     let commentValue = commentInputRef.value.trim();
 
@@ -92,9 +92,7 @@ function saveAndShowNewComment(index) {
     books[index].comments.unshift(newComment);
 
     saveToLocalStorage();
-    // renderCommentsAfterSave(index);
     renderComments(index)
-    getFromLocalStorage();
     renderBooksTemplate();
 
     commentInputRef.value = "";

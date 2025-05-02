@@ -35,7 +35,7 @@ function getBooksTemplate(index) {
                     <div id="comments" class="writen_comments">${renderComments(index)}</div>
                     <div class="input_and_buttom">
                         <input id="comment_input${index}" onkeydown="checkEnter(event, ${index})" type="text" placeholder="Schreibe einen Kommentar...">
-                        <div id="send" class="send_button" onclick="saveAndShowNewComment(${index})"></div>
+                        <div id="send" class="send_button" onclick="addNewComment(${index})"></div>
                     </div>
                 </div>
             </div>`;
